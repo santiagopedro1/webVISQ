@@ -3,6 +3,7 @@
 	"singleQuote": true,
 	"semi": false,
 	"trailingComma": "none",
+	"singleAttributePerLine": true,
 	"printWidth": 100,
 	"plugins": ["prettier-plugin-svelte"],
 	"pluginSearchDirs": ["."],
