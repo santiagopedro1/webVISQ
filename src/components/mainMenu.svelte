@@ -1,6 +1,9 @@
 <script lang="ts">
-	import { appTheme } from '../lib/stores'
+	import { appTheme } from '$lib/stores'
 	import { fly } from 'svelte/transition'
+
+	import moon from '$icons/moon.svg'
+	import sun from '$icons/sun.svg'
 
 	let theme: string
 
@@ -9,11 +12,11 @@
 		switch (theme) {
 			case 'dark':
 				document.getElementsByTagName('main')[0].classList.add('dark')
-				document.cookie = `theme=${theme}; max-age=31536000; path=/; samesite=strict;`
+				document.cookie = `theme=${theme}; max-age=31536000; path=/; samesite=lax;`
 				break
 			case 'light':
 				document.getElementsByTagName('main')[0].classList.remove('dark')
-				document.cookie = `theme=${theme}; max-age=31536000; path=/; samesite=strict;`
+				document.cookie = `theme=${theme}; max-age=31536000; path=/; samesite=lax;`
 				break
 		}
 	}
@@ -33,7 +36,7 @@
 			>
 				{#if theme == 'dark'}
 					<img
-						src="/src/icons/sun.svg"
+						src={sun}
 						alt="An icon of a sun, representing the option to change the website's color theme to light"
 						class="h-4 w-4 dark:invert"
 					/>
@@ -43,7 +46,7 @@
 					>
 				{:else}
 					<img
-						src="/src/icons/moon.svg"
+						src={moon}
 						alt="An icon of a moon, representing the option to change the website's color theme to dark"
 						class="h-4 w-4 dark:invert"
 					/>

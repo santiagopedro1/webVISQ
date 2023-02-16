@@ -1,5 +1,6 @@
 <script lang="ts">
-	import MainMenu from '../components/mainMenu.svelte'
+	import MainMenu from '$components/mainMenu.svelte'
+	import hamburger from "$icons/hamburger.svg"
 
 	let dropdown = false
 </script>
@@ -11,9 +12,9 @@
 			on:click={() => (dropdown = !dropdown)}
 		>
 			<img
-				src="/src/icons/hamburger.svg"
-				alt="menu icon"
-				class=" h-6 w-6 dark:invert"
+				src={hamburger}
+				alt="An icon of a menu, representing the option to open the main menu"
+				class="h-4 w-4 dark:invert"
 			/>
 		</button>
 		<div class="mx-auto w-80 rounded-md bg-green-500" />
