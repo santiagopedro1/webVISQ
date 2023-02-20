@@ -1,6 +1,7 @@
 <script lang="ts">
 	import MainMenu from '$components/mainMenu.svelte'
-	import hamburger from "$icons/hamburger.svg"
+	import AppToolbar from '$components/appToolbar.svelte'
+	import hamburger from '$icons/hamburger.svg'
 
 	let dropdown = false
 </script>
@@ -17,7 +18,7 @@
 				class="h-4 w-4 dark:invert"
 			/>
 		</button>
-		<div class="mx-auto w-80 rounded-md bg-green-500" />
+		<AppToolbar />
 	</div>
 
 	{#if dropdown}
