@@ -1,13 +1,12 @@
 <script lang="ts">
-	import cursor from '$icons/cursor.svg'
-	import play from '$icons/play.svg'
-	import pause from '$icons/pause.svg'
-	import arrow from '$icons/arrow.svg'
+	import { MousePointer, Play, Square, ArrowRight } from 'lucide-svelte'
 
 	let isRunning = false
 </script>
 
-<ul class="mx-auto flex items-center space-x-2 rounded-md bg-gray-100 p-1 dark:bg-neutral-800">
+<ul
+	class="mx-auto flex items-center space-x-2 rounded-md bg-gray-100 p-1 outline outline-1 outline-neutral-500 dark:bg-neutral-800"
+>
 	<li>
 		<input
 			type="radio"
@@ -18,14 +17,10 @@
 		/>
 		<label
 			for="selectTool"
-			class="block cursor-pointer select-none rounded-md p-2 hover:bg-neutral-300 peer-checked:bg-indigo-600 peer-checked:bg-opacity-80 dark:hover:bg-neutral-600"
+			class="block cursor-pointer select-none rounded-md p-2 hover:bg-neutral-300 peer-checked:bg-indigo-400 peer-checked:bg-opacity-80 peer-checked:hover:bg-indigo-600 dark:hover:bg-neutral-600"
 			title="Selecionar"
 		>
-			<img
-				src={cursor}
-				alt="The select tool"
-				class="h-4 w-4 dark:invert"
-			/>
+			<MousePointer size="16" />
 		</label>
 	</li>
 	<li>
@@ -37,14 +32,10 @@
 		/>
 		<label
 			for="arrowTool"
-			class="block cursor-pointer select-none rounded-md p-2 hover:bg-neutral-300 peer-checked:bg-indigo-600 peer-checked:bg-opacity-80 dark:hover:bg-neutral-600"
+			class="block cursor-pointer select-none rounded-md p-2 hover:bg-neutral-300 peer-checked:bg-indigo-400 peer-checked:bg-opacity-80 peer-checked:hover:bg-indigo-600 dark:hover:bg-neutral-600"
 			title="Criar conexão"
 		>
-			<img
-				src={arrow}
-				alt="The arrow tool"
-				class="h-4 w-4 dark:invert"
-			/>
+			<ArrowRight size="16" />
 		</label>
 	</li>
 
@@ -63,11 +54,11 @@
 			class="block cursor-pointer select-none rounded-md p-2 hover:bg-green-500 peer-checked:bg-red-600 peer-checked:bg-opacity-80 peer-checked:hover:bg-red-600"
 			title={isRunning ? 'Parar' : 'Iniciar'}
 		>
-			<img
-				src={isRunning ? pause : play}
-				alt="The state toggle"
-				class="h-4 w-4 dark:invert"
-			/>
+			{#if isRunning}
+				<Square size="16" />
+			{:else}
+				<Play size="16" />
+			{/if}
 		</label>
 	</li>
 </ul>

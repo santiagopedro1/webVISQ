@@ -2,8 +2,7 @@
 	import { appTheme } from '$lib/stores'
 	import { fly } from 'svelte/transition'
 
-	import moon from '$icons/moon.svg'
-	import sun from '$icons/sun.svg'
+	import { Sun, Moon } from 'lucide-svelte'
 
 	let theme: string
 
@@ -35,21 +34,13 @@
 				on:click={toggleTheme}
 			>
 				{#if theme == 'dark'}
-					<img
-						src={sun}
-						alt="An icon of a sun, representing the option to change the website's color theme to light"
-						class="h-4 w-4 dark:invert"
-					/>
+					<Sun size="16" />
 					<span
 						class="text-sm"
 						id="light">Light Mode</span
 					>
 				{:else}
-					<img
-						src={moon}
-						alt="An icon of a moon, representing the option to change the website's color theme to dark"
-						class="h-4 w-4 dark:invert"
-					/>
+					<Moon size="16" />
 					<span
 						class="text-sm"
 						id="dark">Dark Mode</span
@@ -57,6 +48,5 @@
 				{/if}
 			</button>
 		</li>
-		<li>MUITO FODA</li>
 	</ul>
 </div>

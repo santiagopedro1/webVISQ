@@ -9,6 +9,7 @@ specifiers:
   eslint: ^8.28.0
   eslint-config-prettier: ^8.5.0
   eslint-plugin-svelte3: ^4.0.0
+  lucide-svelte: ^0.127.0
   postcss: ^8.4.21
   prettier: ^2.8.4
   prettier-plugin-svelte: ^2.8.1
@@ -19,6 +20,9 @@ specifiers:
   tslib: ^2.4.1
   typescript: ^4.9.3
   vite: ^4.0.0
+
+dependencies:
+  lucide-svelte: 0.127.0_svelte@3.55.1
 
 devDependencies:
   '@sveltejs/adapter-auto': 2.0.0_@sveltejs+kit@1.5.6
@@ -1279,6 +1283,14 @@ packages:
       yallist: 4.0.0
     dev: true
 
+  /lucide-svelte/0.127.0_svelte@3.55.1:
+    resolution: {integrity: sha512-TsdJaL+PvpC9ICpUa/7aV2KVAzyeDODOJwwCgIpPmkdX88hgRnASoD4JcDgLz5PKqMXjY/mXWd9wY8HDCGeDhQ==}
+    peerDependencies:
+      svelte: ^3.49.0
+    dependencies:
+      svelte: 3.55.1
+    dev: false
+
   /magic-string/0.27.0:
     resolution: {integrity: sha512-8UnnX2PeRAPZuN12svgR9j7M1uWMovg/CEnIwIG0LFkXSJJe4PdfUGiTGl8V9bsBHFUtfVINcSyYxd7q+kx9fA==}
     engines: {node: '>=12'}
@@ -1867,7 +1879,6 @@ packages:
   /svelte/3.55.1:
     resolution: {integrity: sha512-S+87/P0Ve67HxKkEV23iCdAh/SX1xiSfjF1HOglno/YTbSTW7RniICMCofWGdJJbdjw3S+0PfFb1JtGfTXE0oQ==}
     engines: {node: '>= 8'}
-    dev: true
 
   /tailwindcss/3.2.6_postcss@8.4.21:
     resolution: {integrity: sha512-BfgQWZrtqowOQMC2bwaSNe7xcIjdDEgixWGYOd6AL0CbKHJlvhfdbINeAW76l1sO+1ov/MJ93ODJ9yluRituIw==}
