@@ -1,13 +1,10 @@
 import { writable } from 'svelte/store'
+import type { Writable } from 'svelte/store'
 
-function theming() {
-	const { subscribe, set } = writable('light')
+const appTheme: Writable<'light' | 'dark'> = writable('light')
 
-	return {
-		subscribe,
-		dark: () => set('dark'),
-		light: () => set('light')
-	}
-}
+const selectedTool: Writable<string> = writable('select')
 
-export const appTheme = theming()
+const isSimulating: Writable<boolean> = writable(false)
+
+export { appTheme, selectedTool, isSimulating }

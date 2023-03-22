@@ -29,6 +29,6 @@ export const load = (async ({ cookies }) => {
 			})
 	}
 	return {
-		theme: theme
+		theme
 	}
 }) satisfies LayoutServerLoad

@@ -5,9 +5,7 @@
 
 	export let data: PageData
 
-	if(data.theme === 'dark') {
-		appTheme.dark()
-	}
+	if (data.theme === 'dark') appTheme.set('dark')
 </script>
 
 <main class={data.theme === 'dark' ? 'dark' : ''}>
