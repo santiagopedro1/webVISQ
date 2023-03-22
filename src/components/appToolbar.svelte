@@ -7,7 +7,7 @@
 	let isRunning = false
 </script>
 
-<ul class="mx-auto flex items-center space-x-2 rounded-md p-1 dark:bg-neutral-800">
+<ul class="mx-auto flex items-center space-x-2 rounded-md bg-gray-100 p-1 dark:bg-neutral-800">
 	<li>
 		<input
 			type="radio"
@@ -18,7 +18,8 @@
 		/>
 		<label
 			for="selectTool"
-			class="block cursor-pointer select-none rounded-md p-2 peer-checked:bg-indigo-600 peer-checked:bg-opacity-80"
+			class="block cursor-pointer select-none rounded-md p-2 hover:bg-neutral-300 peer-checked:bg-indigo-600 peer-checked:bg-opacity-80 dark:hover:bg-neutral-600"
+			title="Selecionar"
 		>
 			<img
 				src={cursor}
@@ -36,11 +37,12 @@
 		/>
 		<label
 			for="arrowTool"
-			class="block cursor-pointer select-none rounded-md p-2 peer-checked:bg-indigo-600 peer-checked:bg-opacity-80"
+			class="block cursor-pointer select-none rounded-md p-2 hover:bg-neutral-300 peer-checked:bg-indigo-600 peer-checked:bg-opacity-80 dark:hover:bg-neutral-600"
+			title="Criar conexão"
 		>
 			<img
 				src={arrow}
-				alt="The select tool"
+				alt="The arrow tool"
 				class="h-4 w-4 dark:invert"
 			/>
 		</label>
@@ -54,25 +56,18 @@
 			name="commands"
 			id="state"
 			class="peer hidden"
-			on:change={() => {
-				isRunning = !isRunning
-			}}
+			on:change={() => (isRunning = !isRunning)}
 		/>
 		<label
 			for="state"
-			class="block cursor-pointer select-none rounded-md p-2 peer-checked:bg-teal-600 peer-checked:bg-opacity-80"
+			class="block cursor-pointer select-none rounded-md p-2 hover:bg-green-500 peer-checked:bg-red-600 peer-checked:bg-opacity-80 peer-checked:hover:bg-red-600"
+			title={isRunning ? 'Parar' : 'Iniciar'}
 		>
 			<img
 				src={isRunning ? pause : play}
-				alt="The select tool"
+				alt="The state toggle"
 				class="h-4 w-4 dark:invert"
 			/>
 		</label>
 	</li>
 </ul>
-
-<style>
-	input:not(:checked) + label:hover {
-		background-color: #3d3d3d;
-	}
-</style>

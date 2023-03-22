@@ -6,10 +6,10 @@
 	let dropdown = false
 </script>
 
-<div class="h-screen text-black dark:bg-neutral-900 dark:text-white">
-	<div class="flex justify-between p-4">
+<div class="relative h-screen text-black dark:text-white">
+	<div class="relative z-10 flex justify-between p-4">
 		<button
-			class="rounded-md border border-neutral-600 bg-white p-2 dark:bg-neutral-800"
+			class="rounded-md border border-neutral-600 bg-white px-2 py-1 dark:bg-neutral-800"
 			on:click={() => (dropdown = !dropdown)}
 		>
 			<img
@@ -22,6 +22,10 @@
 	</div>
 
 	{#if dropdown}
-		<MainMenu />
+		<div class="relative inset-0 z-10">
+			<MainMenu />
+		</div>
 	{/if}
+
+	<canvas class="absolute inset-0 h-screen w-screen bg-neutral-50 dark:bg-neutral-900" />
 </div>
