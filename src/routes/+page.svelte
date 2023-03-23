@@ -1,6 +1,6 @@
 <script lang="ts">
-	import MainMenu from '$components/mainMenu.svelte'
-	import AppToolbar from '$components/appToolbar.svelte'
+	import MainMenu from '$lib/MainMenu.svelte'
+	import AppToolbar from '$lib/AppToolbar.svelte'
 	import { Menu } from 'lucide-svelte'
 
 	import { selectedTool, isSimulating } from '$stores'
